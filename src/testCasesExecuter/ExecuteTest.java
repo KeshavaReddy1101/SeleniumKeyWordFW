@@ -1,13 +1,14 @@
-package testCases;
+package testCasesExecuter;
 
 import java.util.Properties;
-import operation.ReadObject;
+
 import operation.UIOperation;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import excelExportAndFileIO.ReadExcelFile;
+import ojects.ReadObject;
 
-public class HybridExecuteTest {
+public class ExecuteTest {
 
 	public static void main(String[] args) throws Exception {
 
@@ -16,7 +17,7 @@ public class HybridExecuteTest {
 		Properties allObjects = new Properties();
 		allObjects = object.getObjectRepository();
 		ReadExcelFile file = new ReadExcelFile();
-		Sheet mysheet = file.readExcel(System.getProperty("user.dir"), "src/testCases/TestCase.xlsx", "Sheet1");
+		Sheet mysheet = file.readExcel(System.getProperty("user.dir"), "src/testCasesExecuter/TestCase.xlsx", "Sheet1");
 		int rowCount = mysheet.getLastRowNum();
 		String testCase = null;
 		String keyword;
